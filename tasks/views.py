@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import User
 from django.contrib import messages
 from tasks.models import Estudiante
+import pandas
 from .forms import LoginForm  # Asegúrate de importar el formulario correcto
 def iniciar_sesion(request):
     if request.method == 'POST':
@@ -12,7 +13,6 @@ def iniciar_sesion(request):
         password = request.POST['password']
         # Autenticar al estudiante
         user = authenticate(request, username=username, password=password)
-
         if user is not None:
             # Iniciar sesión si las credenciales son válidas
             login(request, user)
@@ -20,7 +20,7 @@ def iniciar_sesion(request):
         else:
             messages.error(request, 'Código o grupo incorrecto. Por favor, inténtalo de nuevo.')
 
-    return render(request, 'home.html')
+    return render(request, 'home.html') #devuelve al html del inicio de sesion
 
 def estudiante(request):
     user = request.user

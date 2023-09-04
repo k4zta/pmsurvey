@@ -14,6 +14,11 @@ class Estudiante(AbstractUser):
     is_anonymous = False
     object= UserManager()
 
+class Docente(models.Model):
+    username = models.CharField(max_length=50,unique=True)
+    codigo = models.CharField(unique=True)
+    password = models.CharField()
+    grupo = models.CharField(max_length=50)
 
 
 
