@@ -1,0 +1,215 @@
+* {
+  background-image: url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?w=1060&t=st=1693678206~exp=1693678806~hmac=4aaa10fd214eee46066b1efaec2bc9e1b7585ebc9d33cd61973abc3c25cfc491");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box; /* Agregamos box-sizing para un mejor control del modelo de caja */
+}
+
+section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+.content {
+  width: 100vmin;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  box-shadow: 10px 25px 28px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.imgs-content {
+  width: 100%;
+  display: flex;
+  animation: slide 16s linear infinite;
+}
+img {
+  width: 100%;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  55% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+.box {
+  position: relative;
+  left: 0;
+  width: 320px;
+  height: 420px;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 320px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.form h2 {
+  color: #1c1c1c;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: #f2f2f2;
+
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 35px;
+  background: #f2f2f2;
+}
+
+.inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1c1c1c;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #1c1c1c;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  background: #f2f2f2;
+}
+
+.inputBox input:focus ~ span,
+.inputBox input:valid ~ span {
+  color: #45f3ff;
+  transform: translateY(-34px);
+  font-size: 0.75em;
+}
+
+.inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  border-radius: 4px;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 9;
+}
+
+.inputBox input:focus ~ i,
+.inputBox input:valid ~ i {
+  height: 44px;
+}
+
+button[type="submit"] {
+  border: none;
+  outline: none;
+  background: #45f3ff;
+  padding: 12px 25px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.6;
+}
+
+button[type="submit"]:active {
+  opacity: 0.7;
+}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+  <body>
+    <section>
+      <div class="content">
+        <div class="imgs-content">
+          <img src="../static/a.jpg" />
+          <img
+            src="https://img.freepik.com/free-vector/hand-coding-concept-illustration_114360-8113.jpg?w=740&t=st=1693677517~exp=1693678117~hmac=251f41e119cd5dc2d2c7d64f53977a4b02aee8ed575001fde683b4531e2423c2"
+          />
+          <img
+            src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=1060&t=st=1693677526~exp=1693678126~hmac=7912005a7629b18bd6926b93730b3e8409d945da6ebb8af9ac78fb705ce65faa"
+          />
+          <img src="../static/b.jpg" />
+        </div>
+      </div>
+
+      <form method="POST">
+      {% csrf_token %}
+
+      <div class="box">
+        <div class="form">
+          <h2>PM Survey</h2>
+          <div class="inputBox">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <span>Usuario</span>
+            <i></i>
+          </div>
+          <div class="inputBox">
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <span>Contraseña</span>
+            <i></i>
+          </div>
+          <button type="submit" class="btn-green">Ingresar</button>
+        </div>
+      </div>
+      </form>
+    </section>
+  </body>
+</html>
